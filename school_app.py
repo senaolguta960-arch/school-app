@@ -13,7 +13,7 @@ if page == "Home":
     str.subheader("Empowering Students for a Brighter Tomorrow")
     
     str.image("bs.jpg", caption="Our Campus")
-    str.link_button("Visit the Ministry of Education website", "https://moe.gov.et/")
+    str.link_button("oromia education bureau information", "https://t.me/OromiaEducationBureauOfficial")
     str.link_button("Join our Telegram group", "https://t.me/bekoji_special_secondary_school")
     str.markdown("---")
     str.warning("📢 Important Announcement: Summer registration is now open! Please visit the school office for details.")
