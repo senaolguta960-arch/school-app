@@ -14,7 +14,7 @@ if page == "Home":
     
     str.image("bs.jpg", caption="Our Campus")
     str.link_button("Visit the Ministry of Education website", "https://moe.gov.et/")
-    str.link_button("Join our Telegram group", "https://t.me/bekoji_special_secondary_school")s
+    str.link_button("Join our Telegram group", "https://t.me/bekoji_special_secondary_school")
     str.markdown("---")
     str.warning("📢 Important Announcement: Summer registration is now open! Please visit the school office for details.")
     grade = str.selectbox("Select your grade:", ["choose","Grade 9", "Grade 10", "Grade 11", "Grade 12"])
