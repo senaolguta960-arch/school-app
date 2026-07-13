@@ -1,52 +1,8 @@
-# 1. This initializes the gate and an empty list to hold registered students
-if "gate" not in str.session_state:
-    str.session_state.gate = "locked"
-if "student_records" not in str.session_state:
-    str.session_state.student_records = []  # This is where your data is stored!
-
-# 2. IF LOCKED, SHOW ENTRY PORTAL
+import streamlit as str
+if "gate" not in str.session_state: str.session_state.gate = "locked"
 if str.session_state.gate == "locked":
-    str.title("BSSS Student Entry Portal 🏫")
-    
-    choice = str.selectbox("Choose Action:", ["Login", "Register", "Owner Admin Panel"])
-    
-    if choice == "Login":
-        user = str.text_input("Username:")
-        pas = str.text_input("Password:", type="password")
-        if str.button("Enter Website"):
-            str.session_state.gate = "unlocked"
-            str.rerun()
-            
-    elif choice == "Register":
-        name = str.text_input("Your Full Name:")
-        grade = str.selectbox("Your Grade:", ["Grade 9", "Grade 10", "Grade 11", "Grade 12"])
-        if str.button("Submit Registration"):
-            if name:
-                # This saves the student's name and grade into the list!
-                str.session_state.student_records.append({"Name": name, "Grade": grade})
-                str.success(f"Success! {name} is registered. Switch to 'Login' to enter.")
-            else:
-                str.error("Please enter your name.")
-                
-    elif choice == "Owner Admin Panel":
-        str.markdown("### 🔒 Owner Secret Login")
-        admin_user = str.text_input("Admin Username:")
-        admin_pass = str.text_input("Admin Password:", type="password")
-        
-        if str.button("Access Records"):
-            if admin_user == "admin" and admin_pass == "bekoji123": # ⬅️ Your secret owner password!
-                str.markdown("---")
-                str.subheader("📋 Registered Students List")
-                
-                if not str.session_state.student_records:
-                    str.info("No students have registered yet.")
-                else:
-                    # Displays the student list as a beautiful table
-                    str.table(str.session_state.student_records)
-            else:
-                str.error("Incorrect Admin credentials!")
-            
-    str.stop() # Stops regular users here# 1. This initializes the gate and an empty list to hold registered students
+    if str.sidebar.text_input("Password:", type="password") == "123": str.session_state.gate = "unlocked"; str.rerun()
+    str.title("Please Login in the Sidebar 🔒"); str.stop()
 if "gate" not in str.session_state:
     str.session_state.gate = "locked"
 if "student_records" not in str.session_state:
