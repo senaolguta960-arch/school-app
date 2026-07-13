@@ -1,4 +1,3 @@
-# 2. IF LOCKED, SHOW ENTRY PORTAL
 if str.session_state.gate == "locked":
     str.title("BSSS Student Entry Portal 🏫")
     
