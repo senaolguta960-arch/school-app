@@ -1,3 +1,5 @@
+if "gate" not in str.session_state:
+    str.session_state.gate = "locked"
 if str.session_state.gate == "locked":
     str.title("BSSS Student Entry Portal 🏫")
     
