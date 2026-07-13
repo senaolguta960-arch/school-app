@@ -131,3 +131,30 @@ elif page == "Contact Us":
     str.write("📍 Location: Bekoji, Oromia, Ethiopia")
     str.write("📧 Email: contact@bekojispecialschool.edu")
     str.write("📞 Phone: +251 9XX XXX XXX")
+elif choice == "School Announcements":
+    str.title("📣 School Updates")
+    
+    # This creates 2 horizontal columns side-by-side
+    col1, col2 = str.columns(2)
+    
+    with col1:
+        str.subheader("📅 Exam Schedule")
+        str.write("Final exams begin next Monday. Make sure to check your room layout!")
+
+    with col2:
+        str.subheader("🎉 Upcoming Holiday")
+        str.write("The school will be closed this Friday for our national holiday celebration.")
+
+elif choice == "Our Subjects":
+    str.title("📚 Course Streams")
+    
+    # This creates 2 horizontal columns side-by-side
+    col1, col2 = str.columns(2)
+    
+    with col1:
+        str.subheader("🔬 Science Stream")
+        str.write("- Physics\n- Chemistry\n- Biology\n- Mathematics")
+
+    with col2:
+        str.subheader("🌍 Social Stream")
+        str.write("- History\n- Geography\n- Economics\n- Literature")
