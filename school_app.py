@@ -1,4 +1,148 @@
-ssss# 1. This initializes the gate and an empty list to hold registered students
+# 1. This initializes the gate and an empty list to hold registered students
+if "gate" not in str.session_state:
+    str.session_state.gate = "locked"
+if "student_records" not in str.session_state:
+    str.session_state.student_records = []  # This is where your data is stored!
+
+# 2. IF LOCKED, SHOW ENTRY PORTAL
+if str.session_state.gate == "locked":
+    str.title("BSSS Student Entry Portal 🏫")
+    
+    choice = str.selectbox("Choose Action:", ["Login", "Register", "Owner Admin Panel"])
+    
+    if choice == "Login":
+        user = str.text_input("Username:")
+        pas = str.text_input("Password:", type="password")
+        if str.button("Enter Website"):
+            str.session_state.gate = "unlocked"
+            str.rerun()
+            
+    elif choice == "Register":
+        name = str.text_input("Your Full Name:")
+        grade = str.selectbox("Your Grade:", ["Grade 9", "Grade 10", "Grade 11", "Grade 12"])
+        if str.button("Submit Registration"):
+            if name:
+                # This saves the student's name and grade into the list!
+                str.session_state.student_records.append({"Name": name, "Grade": grade})
+                str.success(f"Success! {name} is registered. Switch to 'Login' to enter.")
+            else:
+                str.error("Please enter your name.")
+                
+    elif choice == "Owner Admin Panel":
+        str.markdown("### 🔒 Owner Secret Login")
+        admin_user = str.text_input("Admin Username:")
+        admin_pass = str.text_input("Admin Password:", type="password")
+        
+        if str.button("Access Records"):
+            if admin_user == "admin" and admin_pass == "bekoji123": # ⬅️ Your secret owner password!
+                str.markdown("---")
+                str.subheader("📋 Registered Students List")
+                
+                if not str.session_state.student_records:
+                    str.info("No students have registered yet.")
+                else:
+                    # Displays the student list as a beautiful table
+                    str.table(str.session_state.student_records)
+            else:
+                str.error("Incorrect Admin credentials!")
+            
+    str.stop() # Stops regular users here# 1. This initializes the gate and an empty list to hold registered students
+if "gate" not in str.session_state:
+    str.session_state.gate = "locked"
+if "student_records" not in str.session_state:
+    str.session_state.student_records = []  # This is where your data is stored!
+
+# 2. IF LOCKED, SHOW ENTRY PORTAL
+if str.session_state.gate == "locked":
+    str.title("BSSS Student Entry Portal 🏫")
+    
+    choice = str.selectbox("Choose Action:", ["Login", "Register", "Owner Admin Panel"])
+    
+    if choice == "Login":
+        user = str.text_input("Username:")
+        pas = str.text_input("Password:", type="password")
+        if str.button("Enter Website"):
+            str.session_state.gate = "unlocked"
+            str.rerun()
+            
+    elif choice == "Register":
+        name = str.text_input("Your Full Name:")
+        grade = str.selectbox("Your Grade:", ["Grade 9", "Grade 10", "Grade 11", "Grade 12"])
+        if str.button("Submit Registration"):
+            if name:
+                # This saves the student's name and grade into the list!
+                str.session_state.student_records.append({"Name": name, "Grade": grade})
+                str.success(f"Success! {name} is registered. Switch to 'Login' to enter.")
+            else:
+                str.error("Please enter your name.")
+                
+    elif choice == "Owner Admin Panel":
+        str.markdown("### 🔒 Owner Secret Login")
+        admin_user = str.text_input("Admin Username:")
+        admin_pass = str.text_input("Admin Password:", type="password")
+        
+        if str.button("Access Records"):
+            if admin_user == "admin" and admin_pass == "bekoji123": # ⬅️ Your secret owner password!
+                str.markdown("---")
+                str.subheader("📋 Registered Students List")
+                
+                if not str.session_state.student_records:
+                    str.info("No students have registered yet.")
+                else:
+                    # Displays the student list as a beautiful table
+                    str.table(str.session_state.student_records)
+            else:
+                str.error("Incorrect Admin credentials!")
+            
+    str.stop() # Stops regular users here# 1. This initializes the gate and an empty list to hold registered students
+if "gate" not in str.session_state:
+    str.session_state.gate = "locked"
+if "student_records" not in str.session_state:
+    str.session_state.student_records = []  # This is where your data is stored!
+
+# 2. IF LOCKED, SHOW ENTRY PORTAL
+if str.session_state.gate == "locked":
+    str.title("BSSS Student Entry Portal 🏫")
+    
+    choice = str.selectbox("Choose Action:", ["Login", "Register", "Owner Admin Panel"])
+    
+    if choice == "Login":
+        user = str.text_input("Username:")
+        pas = str.text_input("Password:", type="password")
+        if str.button("Enter Website"):
+            str.session_state.gate = "unlocked"
+            str.rerun()
+            
+    elif choice == "Register":
+        name = str.text_input("Your Full Name:")
+        grade = str.selectbox("Your Grade:", ["Grade 9", "Grade 10", "Grade 11", "Grade 12"])
+        if str.button("Submit Registration"):
+            if name:
+                # This saves the student's name and grade into the list!
+                str.session_state.student_records.append({"Name": name, "Grade": grade})
+                str.success(f"Success! {name} is registered. Switch to 'Login' to enter.")
+            else:
+                str.error("Please enter your name.")
+                
+    elif choice == "Owner Admin Panel":
+        str.markdown("### 🔒 Owner Secret Login")
+        admin_user = str.text_input("Admin Username:")
+        admin_pass = str.text_input("Admin Password:", type="password")
+        
+        if str.button("Access Records"):
+            if admin_user == "admin" and admin_pass == "bekoji123": # ⬅️ Your secret owner password!
+                str.markdown("---")
+                str.subheader("📋 Registered Students List")
+                
+                if not str.session_state.student_records:
+                    str.info("No students have registered yet.")
+                else:
+                    # Displays the student list as a beautiful table
+                    str.table(str.session_state.student_records)
+            else:
+                str.error("Incorrect Admin credentials!")
+            
+    str.stop() # Stops regular users here# 1. This initializes the gate and an empty list to hold registered students
 if "gate" not in str.session_state:
     str.session_state.gate = "locked"
 if "student_records" not in str.session_state:
@@ -47,31 +191,6 @@ if str.session_state.gate == "locked":
                 str.error("Incorrect Admin credentials!")
             
     str.stop() # Stops regular users here
-import streamlit as str  # ⬅️ THIS MUST BE LINE 1 NOW!
-
-# Then the gatekeeper code comes right under it:
-if "gate" not in str.session_state:
-    str.session_state.gate = "locked"
-
-if str.session_state.gate == "locked":
-    str.title("BSSS Student Entry Portal 🏫")
-    
-    choice = str.selectbox("Choose Action:", ["Login", "Register"])
-    
-    if choice == "Login":
-        user = str.text_input("Username:")
-        pas = str.text_input("Password:", type="password")
-        if str.button("Enter Website"):
-            str.session_state.gate = "unlocked"
-            str.rerun()
-            
-    if choice == "Register":
-        name = str.text_input("Your Full Name:")
-        grade = str.text_input("Your Grade:")
-        if str.button("Submit Registration"):
-            str.success("Registered! Now change the box above to 'Login' to enter.")
-            
-    str.stop()
 import streamlit as str
 
 # --- SIDEBAR NAVIGATION ---
