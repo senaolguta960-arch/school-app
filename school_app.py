@@ -1,8 +1,4 @@
-import streamlit as str
-if "gate" not in str.session_state: str.session_state.gate = "locked"
-if str.session_state.gate == "locked":
-    if str.sidebar.text_input("Password:", type="password") == "123": str.session_state.gate = "unlocked"; str.rerun()
-    str.title("Please Login in the Sidebar 🔒"); str.stop()
+
 if "gate" not in str.session_state:
     str.session_state.gate = "locked"
 if "student_records" not in str.session_state:
