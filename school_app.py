@@ -1,3 +1,28 @@
+# 1. This checks if the student is logged in
+if "gate" not in str.session_state:
+    str.session_state.gate = "locked"
+
+# 2. If locked, show ONLY the login/register buttons
+if str.session_state.gate == "locked":
+    str.title("BSSS Student Entry Portal 🏫")
+    
+    # Simple choice box right on the first page
+    choice = str.selectbox("Choose Action:", ["Login", "Register"])
+    
+    if choice == "Login":
+        user = str.text_input("Username:")
+        pas = str.text_input("Password:", type="password")
+        if str.button("Enter Website"):
+            str.session_state.gate = "unlocked"
+            str.rerun()
+            
+    if choice == "Register":
+        name = str.text_input("Your Full Name:")
+        grade = str.text_input("Your Grade:")
+        if str.button("Submit Registration"):
+            str.success("Registered! Now change the box above to 'Login' to enter.")
+            
+    str.stop() # This stops the code here so they can't see the rest!
 import streamlit as str
 
 # --- SIDEBAR NAVIGATION ---
