@@ -106,7 +106,7 @@ if page == "Home":
     str.subheader("Empowering Students for a Brighter Tomorrow")
     
     # Displays your campus photo
-    str.image("bs.jpg", caption="Our Campus")
+    str.image("on.jpg", caption="Our Campus")
     
     # Your clickable links
     str.link_button("Oromia education bureau information", "https://t.me/OromiaEducationBureauOfficial")
