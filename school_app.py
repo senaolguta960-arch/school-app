@@ -31,33 +31,7 @@ if str.session_state.gate == "locked":
                 
                 if not str.session_state.student_records:
                     str.info("No students have registered yet.")
-elif choice == "School Announcements":
-    str.title("📣 School Updates")
-    
-    # This creates 2 horizontal columns side-by-side
-    col1, col2 = str.columns(2)
-    
-    with col1:
-        str.subheader("📅 Exam Schedule")
-        str.write("Final exams begin next Monday. Make sure to check your room layout!")
 
-    with col2:
-        str.subheader("🎉 Upcoming Holiday")
-        str.write("The school will be closed this Friday for our national holiday celebration.")
-
-elif choice == "Our Subjects":
-    str.title("📚 Course Streams")
-    
-    # This creates 2 horizontal columns side-by-side
-    col1, col2 = str.columns(2)
-    
-    with col1:
-        str.subheader("🔬 Science Stream")
-        str.write("- Physics\n- Chemistry\n- Biology\n- Mathematics")
-
-    with col2:
-        str.subheader("🌍 Social Stream")
-        str.write("- History\n- Geography\n- Economics\n- Literature")            
     str.stop() # Stops regular users here# 1. This initializes the gate and an empty list to hold registered students
 if "gate" not in str.session_state:
     str.session_state.gate = "locked"
