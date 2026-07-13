@@ -1,4 +1,4 @@
-
+import streamlit as str
 if "gate" not in str.session_state:
     str.session_state.gate = "locked"
 if "student_records" not in str.session_state:
