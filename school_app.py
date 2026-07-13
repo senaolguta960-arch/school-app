@@ -4,14 +4,42 @@ import streamlit as str
 str.set_page_config(page_title="BSSS/Highschool", page_icon="🏫", layout="centered")
 
 # --- NAVIGATION SIDEBAR ---
-# Added "Login" and "Registration" directly into your radio choices
-page = str.sidebar.radio("Navigate", ["Home", "About Us", "Contact Us", "Login", "Registration"])
+page = str.sidebar.radio("Navigate", ["Home", "About Us", "Contact Us"])
 
-# --- HOME PAGE ---
+# --- WELCOME TITLE (Shows on every page) ---
+str.title("Welcome to BSSS/BEKOJI SPECIAL SECONDARY SCHOOL 🍎")
+str.subheader("Empowering Students for a Brighter Tomorrow")
+
+# --- FIRST ENTRY: PORTALS AT THE VERY TOP ---
+str.markdown("### 🔑 Student Portal Access")
+# This creates two clean columns side-by-side on the front page entry
+col1, col2 = str.columns(2)
+
+with col1:
+    str.markdown("#### Login")
+    student_id = str.text_input("Student ID Number:", key="login_id")
+    password = str.text_input("Password:", type="password", key="login_pass")
+    if str.button("Login"):
+        if student_id and password:
+            str.success(f"Welcome back! ID {student_id} logged in.")
+        else:
+            str.error("Enter ID and password.")
+
+with col2:
+    str.markdown("#### Register New Student")
+    first_name = str.text_input("First Name:", key="reg_first")
+    last_name = str.text_input("Last Name:", key="reg_last")
+    reg_grade = str.selectbox("Grade:", ["Grade 9", "Grade 10", "Grade 11", "Grade 12"], key="reg_grade")
+    if str.button("Submit Registration"):
+        if first_name and last_name:
+            str.success(f"Thank you, {first_name}! Form sent.")
+        else:
+            str.error("Please fill in names.")
+
+str.markdown("---") # Visual divider line
+
+# --- HOME PAGE CONTENT ---
 if page == "Home":
-    str.title("Welcome to BSSS/BEKOJI SPECIAL SECONDARY SCHOOL 🍎")
-    str.subheader("Empowering Students for a Brighter Tomorrow")
-    
     str.image("bs.jpg", caption="Our Campus")
     str.link_button("oromia education bureau information", "https://t.me/OromiaEducationBureauOfficial")
     str.link_button("Join our Telegram group", "https://t.me/bekoji_special_secondary_school")
@@ -46,7 +74,6 @@ elif page == "Contact Us":
     str.title("Contact / Inquiry Form")
     str.write("Have questions? Fill out the form below and our administration team will get back to you.")
     
-    # Simple form fields from your second screenshot
     with str.form("inquiry_form"):
         name = str.text_input("Your Name")
         email = str.text_input("Your Email Address")
@@ -59,32 +86,3 @@ elif page == "Contact Us":
             str.success(f"Thank you, {name}! Your message has been received. We will contact you at {email}.")
         else:
             str.error("Please fill out all the fields before submitting.")
-
-# --- LOGIN PAGE ---
-elif page == "Login":
-    str.title("🔑 Student Login Portal")
-    str.write("Enter your credentials below to access your student profile account.")
-    
-    student_id = str.text_input("Student ID Number:")
-    password = str.text_input("Password:", type="password")
-    
-    if str.button("Login"):
-        if student_id and password:
-            str.success(f"Welcome back! Student ID {student_id} logged in successfully.")
-        else:
-            str.error("Please enter both your Student ID and password.")
-
-# --- REGISTRATION PAGE ---
-elif page == "Registration":
-    str.title("📝 New Student Registration Form")
-    str.write("Please complete this application form to register at BSSS.")
-    
-    first_name = str.text_input("First Name:")
-    last_name = str.text_input("Last Name:")
-    reg_grade = str.selectbox("Registering for Grade:", ["Grade 9", "Grade 10", "Grade 11", "Grade 12"])
-    
-    if str.button("Submit Registration"):
-        if first_name and last_name:
-            str.success(f"Thank you, {first_name}! Your registration application for {reg_grade} has been sent successfully.")
-        else:
-            str.error("Please fill in your first and last name before submitting.")
