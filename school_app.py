@@ -1,9 +1,3 @@
-
-if "gate" not in str.session_state:
-    str.session_state.gate = "locked"
-if "student_records" not in str.session_state:
-    str.session_state.student_records = []  # This is where your data is stored!
-
 # 2. IF LOCKED, SHOW ENTRY PORTAL
 if str.session_state.gate == "locked":
     str.title("BSSS Student Entry Portal 🏫")
