@@ -24,6 +24,7 @@ if str.session_state.gate == "locked":
             if name:
                 # This saves the student's name and grade into the list!
                 str.session_state.student_records.append({"Name": name, "Grade": grade})
+                open("database.txt", "a").write(f"{name},{grade}\n")
                 str.success(f"Success! {name} is registered. Switch to 'Login' to enter.")
             else:
                 str.error("Please enter your name.")
