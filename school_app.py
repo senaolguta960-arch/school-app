@@ -85,4 +85,4 @@ elif page == "Contact Us":
         if name and email and message:
             str.success(f"Thank you, {name}! Your message has been received. We will contact you at {email}.")
         else:
-            str.error("Please fill out all the fields before submitting.")
+            str.error("Please fill out all the fields before submitting.")             
