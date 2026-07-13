@@ -8,7 +8,7 @@ if "student_records" not in str.session_state:
 if str.session_state.gate == "locked":
     str.title("BSSS Student Entry Portal 🏫")
     
-    choice = str.selectbox("Choose Action:", ["Login", "Register", "Owner Admin Panel"])
+    choice = str.selectbox("Choose Action:", ["Login", "Register"])
     
     if choice == "Login":
         user = str.text_input("Username:")
@@ -29,23 +29,8 @@ if str.session_state.gate == "locked":
             else:
                 str.error("Please enter your name.")
                 
-    elif choice == "Owner Admin Panel":
-        str.markdown("### 🔒 Owner Secret Login")
-        admin_user = str.text_input("Admin Username:")
-        admin_pass = str.text_input("Admin Password:", type="password")
-        
-        if str.button("Access Records"):
-            if admin_user == "admin" and admin_pass == "bekoji123": # ⬅️ Your secret owner password!
-                str.markdown("---")
-                str.subheader("📋 Registered Students List")
-                
                 if not str.session_state.student_records:
                     str.info("No students have registered yet.")
-                else:
-                    # Displays the student list as a beautiful table
-                    str.table(str.session_state.student_records)
-            else:
-                str.error("Incorrect Admin credentials!")
             
     str.stop() # Stops regular users here# 1. This initializes the gate and an empty list to hold registered students
 if "gate" not in str.session_state:
@@ -57,7 +42,7 @@ if "student_records" not in str.session_state:
 if str.session_state.gate == "locked":
     str.title("BSSS Student Entry Portal 🏫")
     
-    choice = str.selectbox("Choose Action:", ["Login", "Register", "Owner Admin Panel"])
+    choice = str.selectbox("Choose Action:", ["Login", "Register"])
     
     if choice == "Login":
         user = str.text_input("Username:")
